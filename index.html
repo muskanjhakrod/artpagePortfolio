@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muskan. Arts</title>
+    
+    <link rel="stylesheet" href="css/base.css">
+    <!-- <link id="theme-style" rel="stylesheet" href="css/light/light-theme.css">
+    <link rel="stylesheet" href="css/light/light-animations.css"> -->
+    <link id="theme-style" rel="stylesheet" href=""> 
+    <link id="theme-animations" rel="stylesheet" href="">
+</head>
+<body class="light-mode dark-mode">
+    <canvas id="leaf-canvas"></canvas>
+
+    <nav class="navbar">
+        <div class="logo">Muskan. <span>Arts</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="theme-toggle" class="mode-btn">Mode change</button>
+    </nav>
+
+    <section id="home" class="hero">
+    <div class="hero-container">
+        <div class="hero-text-wrapper">
+            <p class="hero-pre-title">Welcome to my world</p>
+            <h1 class="hero-main-title">I create in <span class="accent">colors</span>,<br> and I think in <span class="logic">logic</span>.</h1>
+            <div class="quote-container">
+                <p class="hero-quote">"My art lives between seasons — sometimes it drifts through midnight skies... sometimes it rests in warm sunlight."</p>
+            </div>
+        </div>
+        
+        <div class="scroll-down">
+            <span>Scroll to explore</span>
+            <div class="mouse-icon">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="about" class="reveal">
+    <div class="about-wrapper">
+        <div class="about-content">
+            <span class="sub-heading">A little bit...</span>
+            <h2 class="about-title">About Me</h2>
+            <div class="about-text-block">
+                <p class="highlight-text">My name is Muskan Thakrod.</p>
+                <p>An artist who loves to draw things and put imagination into paper with the help of colors.</p>
+                <p class="poetic-line">"I create in colors, and I think in logic."</p>
+            </div>
+        </div>
+        <div class="about-visual">
+            <div class="avatar-blob">
+                <img src="assets/avatar.png" alt="Muskan Illustration">
+            </div>
+            <div class="decorative-circle"></div>
+        </div>
+    </div>
+</section>
+
+    <section id="gallery" class="reveal">
+    <div class="gallery-header">
+        <h2 class="section-title">Visual Journal</h2>
+        <p class="section-subtitle">A collection of imagination and color</p>
+    </div>
+
+    <div class="gallery-container">
+        <div class="gallery-viewbox">
+            <div class="gallery-grid" id="art-track">
+                <div class="art-card">
+                    <div class="card-inner">
+                        <img src="assets/art1.png" alt="Art 1">
+                        <div class="card-overlay">
+                            <div class="overlay-text">
+                                <h3>Ethereal Dreams</h3>
+                                <p>Logic meets color in a midnight sky.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <div class="card-inner">
+                        <img src="assets/art2.png" alt="Art 1">
+                        <div class="card-overlay">
+                            <div class="overlay-text">
+                                <h3>Ethereal Dreams</h3>
+                                <p>Logic meets color in a midnight sky.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <div class="card-inner">
+                        <img src="assets/art3.png" alt="Art 1">
+                        <div class="card-overlay">
+                            <div class="overlay-text">
+                                <h3>Ethereal Dreams</h3>
+                                <p>Logic meets color in a midnight sky.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <div class="card-inner">
+                        <img src="assets/art4.png" alt="Art 1">
+                        <div class="card-overlay">
+                            <div class="overlay-text">
+                                <h3>Ethereal Dreams</h3>
+                                <p>Logic meets color in a midnight sky.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <div class="card-inner">
+                        <img src="assets/art5.png" alt="Art 1">
+                        <div class="card-overlay">
+                            <div class="overlay-text">
+                                <h3>Ethereal Dreams</h3>
+                                <p>Logic meets color in a midnight sky.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="art-card">
+                    <div class="card-inner">
+                        <img src="assets/art6.png" alt="Art 1">
+                        <div class="card-overlay">
+                            <div class="overlay-text">
+                                <h3>Ethereal Dreams</h3>
+                                <p>Logic meets color in a midnight sky.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+        
+        <div class="gallery-controls">
+            <button class="nav-btn prev" id="prev-button">←</button>
+            <div class="gallery-counter"><span id="current-idx">01</span> / <span id="total-idx">06</span></div>
+            <button class="nav-btn next" id="next-button">→</button>
+        </div>
+    </div>
+</section>
+        
+
+   <section id="contact" class="reveal">
+    <div class="contact-header">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">Have a project in mind or just want to say hi?</p>
+    </div>
+
+    <div class="contact-container">
+        <div class="contact-glass-card">
+            <div class="contact-methods">
+                <a href="mailto:yourname@email.com" class="contact-item">
+                    <div class="icon-box">✉️</div>
+                    <span>Email Me</span>
+                </a>
+                <a href="https://instagram.com/yourprofile" target="_blank" class="contact-item">
+                    <div class="icon-box">📸</div>
+                    <span>Instagram</span>
+                </a>
+            </div>
+            
+            <div class="contact-footer">
+                <p>Based in the intersection of logic and color.</p>
+                <div class="love-note">Made with love ❤️</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div id="script-container"></div>
+    <script src="js/theme-loader.js"></script>
+    
+</body>
+</html>

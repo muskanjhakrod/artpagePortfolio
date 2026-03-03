@@ -1,0 +1,481 @@
+body.light-mode {
+    background-color: #fff8f5; /* Soft beige from your UI */
+    color: #d27d56; /* The warm orange/brown text color */
+}
+
+.mode-btn {
+    background: #fdf2e9;
+    border: 1px solid #f9dcc4;
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: #ff8a8a;
+    cursor: pointer;
+}
+
+.hero .quote, .about-text{
+    font-family: 'Cursive', 'Brush Script MT', sans-serif; /* Use your uploaded handwritten font here */
+    font-size: 2rem;
+    line-height: 1.6;
+}
+
+.section-title {
+    font-family: 'Cursive', 'Brush Script MT', sans-serif; /* Use your uploaded handwritten font here */
+    font-size: 3.5rem;
+    color: #d27d56;
+    margin-bottom: 30px;
+}
+
+
+
+.hero-content{
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hero-content{
+    font-size: 1.5 rem;
+}
+
+.hero, .about, .gallery {
+    position: relative;
+    z-index: 10; /* Keeps content above the falling leaves */
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-subtitle {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    letter-spacing: 2px;
+}
+
+.gallery-viewbox {
+    width: 960px; /* 3 cards (300px) + gaps (20px * 2) + margins */
+    margin: 0 auto;
+    overflow: hidden; /* This acts as the 'window' */
+    position: relative;
+    padding: 20px 0;
+}
+
+.art-card {
+    /* 0 0 means: do not grow, do not shrink. Stay exactly 300px. */
+    flex: 0 0 300px; 
+    height: 350px;
+    perspective: 1000px;
+    position: relative;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.art-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+
+.art-card:hover img {
+    transform: scale(1.1);
+}
+
+.art-card:hover .card-inner {
+    transform: translateY(-15px) rotateY(-5deg);
+    box-shadow: 10px 10px 50px rgba(0,0,0,0.1);
+}
+
+.gallery-grid {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: nowrap; /* No wrapping allowed */
+    white-space: nowrap; /* Forces content to stay on one line */
+    gap: 20px;
+    align-items: center;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    width: max-content; 
+}
+
+/* Controls Styling */
+.gallery-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%; 
+    background: linear-gradient(transparent, rgba(210, 125, 86, 0.9));
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.art-card:hover .card-overlay {
+    opacity: 1; /* Shows on hover */
+}
+
+
+.nav-btn {
+    background: white;
+    border: 1px solid #f7dcd9;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.nav-btn:hover {
+    background: #f7dcd9;
+    transform: scale(1.1);
+}
+
+
+
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Text Styling */
+.about-content {
+    flex: 1;
+}
+
+.sub-heading {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.about-title {
+    font-family: 'Cursive', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    color: #d27d56;
+}
+
+.about-text-block p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: #5a4b41;
+}
+
+.highlight-text {
+    font-weight: 600;
+    font-size: 1.3rem !important;
+    color: #ff8a8a !important;
+}
+
+.poetic-line {
+    font-style: italic;
+    border-left: 2px solid #f7dcd9;
+    padding-left: 20px;
+    margin-top: 30px;
+}
+
+/* Visual Styling */
+.about-visual {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.avatar-blob {
+    width: 320px;
+    height: 320px;
+    background: #f7dcd9;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; /* Organic blob shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 2;
+    animation: blobMorph 8s ease-in-out infinite;
+    border: 2px solid #fff;
+}
+
+.avatar-blob img {
+    width: 80%;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+}
+
+.decorative-circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #fdf2e9;
+    border-radius: 50%;
+    top: -20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.hero-text-wrapper {
+    z-index: 10;
+}
+
+.hero-pre-title {
+    font-size: 0.9rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.hero-main-title {
+    font-size: clamp(2.5rem, 6vw, 4.5rem); /* Responsive font size */
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: #5a4b41;
+}
+
+.hero-main-title .accent {
+    color: #ff8a8a;
+    font-family: 'Cursive', sans-serif;
+}
+
+.hero-main-title .logic {
+    color: #d27d56;
+    font-style: italic;
+}
+
+.quote-container {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 25px 40px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    display: inline-block;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(210, 125, 86, 0.05);
+}
+
+.hero-quote {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #8c7a6b;
+}
+
+/* Scroll Indicator */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.7;
+}
+
+.mouse-icon {
+    width: 25px;
+    height: 40px;
+    border: 2px solid #d27d56;
+    border-radius: 15px;
+    position: relative;
+}
+
+.wheel {
+    width: 3px;
+    height: 6px;
+    background: #d27d56;
+    border-radius: 2px;
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheel 2s infinite;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.contact-header .section-subtitle {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact-glass-card {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 40px;
+    padding: 60px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(210, 125, 86, 0.1);
+    transition: transform 0.4s ease;
+}
+
+.contact-glass-card:hover {
+    transform: translateY(-10px);
+}
+
+.contact-methods {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    text-decoration: none;
+    color: #d27d56;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background: #f7dcd9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover .icon-box {
+    background: #ff8a8a;
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 10px 20px rgba(255, 138, 138, 0.3);
+}
+
+.contact-item span {
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.contact-footer {
+    border-top: 1px solid rgba(210, 125, 86, 0.2);
+    padding-top: 30px;
+}
+
+.contact-footer p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-bottom: 15px;
+}
+
+.love-note {
+    font-family: 'Cursive', sans-serif;
+    color: #ff8a8a;
+    font-size: 1.2rem;
+}
+
+@keyframes scrollWheel {
+    0% { transform: translate(-50%, 0); opacity: 1; }
+    100% { transform: translate(-50%, 15px); opacity: 0; }
+}
+
+/* Animation for the blob shape */
+@keyframes blobMorph {
+    0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+
+/* Ensure the Navbar wraps or hides links on small screens */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1.5rem 5%;
+    }
+    .nav-links {
+        display: none; /* In a real project, you'd add a hamburger menu here */
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-main-title {
+        font-size: 2.5rem; /* Shrink the title so it doesn't overflow */
+        line-height: 1.2;
+    }
+    .quote-container {
+        padding: 20px;
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-wrapper {
+        flex-direction: column; /* Stack vertically */
+        text-align: center;
+        gap: 40px;
+    }
+    .avatar-blob {
+        width: 250px; /* Smaller blob for mobile */
+        height: 250px;
+    }
+    .poetic-line {
+        border-left: none;
+        border-top: 2px solid #f7dcd9;
+        padding-left: 0;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .gallery-viewbox {
+        width: 100%; /* Take full width of the phone */
+        padding: 20px;
+    }
+    .art-card {
+        flex: 0 0 85vw; /* Each card takes up 85% of the screen width */
+    }
+}

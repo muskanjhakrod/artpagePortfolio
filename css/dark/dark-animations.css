@@ -1,0 +1,96 @@
+/* Scoping animations to Dark Mode only */
+body.dark-mode {
+    animation: fadeInPage 1.5s ease forwards;
+}
+
+/* 1. Heading Glow Interaction */
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode .logic-text {
+    transition: text-shadow 0.5s ease;
+}
+
+body.dark-mode h1:hover, 
+body.dark-mode h2:hover {
+    /* Moonlight white glow with a hint of cosmic purple */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 
+                 0 0 25px rgba(179, 157, 221, 0.4);
+}
+
+/* 2. Hero Section Entrance (Matching Light Mode Timing) */
+body.dark-mode .hero-pre-title {
+    animation: fadeInDown 1.5s ease forwards;
+}
+
+body.dark-mode .hero-main-title {
+    animation: fadeInUp 1.5s ease forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+body.dark-mode .quote-container {
+    animation: fadeInUp 1.5s ease forwards;
+    animation-delay: 0.8s;
+    opacity: 0;
+}
+
+/* 3. About Section Reveal (Mirrors Light Mode logic) */
+body.dark-mode #about.reveal {
+    opacity: 0; /* Resetting to 0 so it can fade in properly */
+    transform: translateY(30px);
+    transition: opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1), 
+                transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.dark-mode #about.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ensure this is in BOTH light and dark animation files */
+#about.reveal {
+    opacity: 1; 
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
+
+/* This class MUST be added by JavaScript to see the section */
+#about.active {
+    opacity: 1;
+     transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 4. Slide Content Logic (Triggered by .active class) */
+body.dark-mode #about.active .about-content {
+    animation: slideRight 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+body.dark-mode #about.active .about-visual {
+    animation: slideLeft 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* --- Shared Keyframes --- */
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideRight {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideLeft {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; filter: blur(5px); }
+    to { opacity: 1; filter: blur(0); }
+}

@@ -1,0 +1,71 @@
+/* Glow for headings when sparkles pass over */
+h1, h2, .logic-text {
+    transition: text-shadow 0.5s ease;
+}
+
+h1:hover, h2:hover {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 
+                 0 0 5px rgba(210, 125, 86, 0.3);
+}
+
+
+.hero-pre-title {
+    animation: fadeInDown 1.5s ease forwards;
+}
+
+.hero-main-title {
+    animation: fadeInUp 1.5s ease forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+.quote-container {
+    animation: fadeInUp 1.5s ease forwards;
+    animation-delay: 0.8s;
+    opacity: 0;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Reveal effect when scrolling to the About section */
+#about.reveal {
+    opacity: 1;
+    /* transform: translateY(40px); */
+    transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#about.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-content {
+    animation: slideRight 1.5s ease-out;
+}
+
+.about-visual {
+    animation: slideLeft 1.5s ease-out;
+}
+
+@keyframes slideRight {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideLeft {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; filter: blur(5px); }
+    to { opacity: 1; filter: blur(0); }
+}
